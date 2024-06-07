@@ -1,0 +1,11 @@
+/* Custom styles for VisionAI app */
+
+video, canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+canvas {
+  z-index: 100;
+}
