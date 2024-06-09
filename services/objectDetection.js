@@ -27,11 +27,11 @@ const detectObjects = async (imageBuffer) => {
     const model = await loadModel();
     console.log("Model loaded, performing detection...");
     const predictions = await model.detect(image);
-    image.dispose(); // Dispose the tensor to free memory
     console.log(`Detected objects: ${predictions.length}`);
     predictions.forEach(prediction => {
       console.log(`Detected object: ${prediction.class} with confidence: ${prediction.score}`);
     });
+    image.dispose(); // Dispose the tensor to free memory
     return predictions;
   } catch (error) {
     console.error('Error in object detection:', error.stack);
